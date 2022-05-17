@@ -20,6 +20,11 @@ func TestStringMatching(t *testing.T) {
 		want := "bonjour et bienvenue!"
 		assertStringsMatch(t, got, want)
 	})
+	t.Run("tesing hello function in spanish", func(t *testing.T) {
+		got := Hello("spanish")
+		want := "hola y bienvenidos!"
+		assertStringsMatch(t, got, want)
+	})
 	t.Run("testing i made this function", func(t *testing.T) {
 		got := IMadeThis()
 		want := "i made this http server!"
