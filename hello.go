@@ -1,8 +1,7 @@
-
-package main 
+package main
 
 import (
-	"fmt" 
+	"fmt"
 	"net/http"
 )
 
@@ -14,24 +13,22 @@ func Hello(language string) string {
 	switch language {
 	case "french":
 		return "bonjour et bienvenue!"
-	case: "spanish": 
+	case "spanish":
 		return "hola y bienvenidos!"
-	default: 
+	default:
 		return "hello and welcome!"
 	}
-	return
 }
-
 
 func main() {
 
 	http.HandleFunc("/", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, IMadeThis())
-    })
+		fmt.Fprintf(w, IMadeThis())
+	})
 
-    http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
-        fmt.Fprintf(w, Hello("french"))
-    })
- 
-    http.ListenAndServe(":5050", nil)
+	http.HandleFunc("/hello", func(w http.ResponseWriter, r *http.Request) {
+		fmt.Fprintf(w, Hello("french"))
+	})
+
+	http.ListenAndServe(":5050", nil)
 }
