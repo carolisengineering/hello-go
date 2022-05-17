@@ -11,13 +11,15 @@ func IMadeThis() string {
 }
 
 func Hello(language string) string {
-	if language == "french" {
+	switch language {
+	case "french":
 		return "bonjour et bienvenue!"
-	}
-	if language == "spanish" {
+	case: "spanish": 
 		return "hola y bienvenidos!"
+	default: 
+		return "hello and welcome!"
 	}
-	return "hello and welcome!"
+	return
 }
 
 
